@@ -209,8 +209,8 @@ clbss_l:str	r2, [r0]		/* clear loop...                    */
 	cmp	r0, r1
 	ble	clbss_l
 
-	bl coloured_LED_init
-	bl red_LED_on
+@	bl coloured_LED_init
+@	bl red_LED_on
 #endif /* CONFIG_PRELOADER */
 
 	ldr	pc, _start_armboot
@@ -255,9 +255,9 @@ cpu_init_crit:
 	/*
 	 * Go setup Memory and board specific bits prior to relocation.
 	 */
-	mov	ip, lr		/* perserve link reg across call */
-	bl	lowlevel_init	/* go setup pll,mux,memory */
-	mov	lr, ip		/* restore link */
+@	mov	ip, lr		/* perserve link reg across call */
+@	bl	lowlevel_init	/* go setup pll,mux,memory */
+@	mov	lr, ip		/* restore link */
 	mov	pc, lr		/* back to my caller */
 #endif /* CONFIG_SKIP_LOWLEVEL_INIT */
 
