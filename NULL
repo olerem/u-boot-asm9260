@@ -1,0 +1,282 @@
+for dir in tools examples/standalone examples/api arch/arm/cpu/arm926ejs /home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs/ ; do \
+			make -C $dir _depend ; done
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/tools'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/tools'
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/examples/standalone'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/examples/standalone'
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/examples/api'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/examples/api'
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs'
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs'
+make[1]: Nothing to be done for `_depend'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs'
+make -C tools all
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/tools'
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/tools'
+make -C examples/standalone all
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/examples/standalone'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/examples/standalone'
+make -C examples/api all
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/examples/api'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/examples/api'
+make -C arch/arm/cpu/arm926ejs start.o
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs'
+make[1]: “start.o”是最新的。
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs'
+make -C lib/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/lib'
+make[1]: “libgeneric.a”是最新的。
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/lib'
+make -C lib/lzma/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/lib/lzma'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv liblzma.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/lib/lzma'
+make -C lib/lzo/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/lib/lzo'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv liblzo.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/lib/lzo'
+make -C arch/arm/cpu/arm926ejs/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs'
+make -C arch/arm/cpu/arm926ejs/asm9260/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs/asm9260'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs/asm9260'
+make -C arch/arm/lib/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/lib'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-gcc  -g  -Os   -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x20680000 -I/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/include -fno-builtin -ffreestanding -nostdinc -isystem /usr/local/arm/arm-2008q3-linux/bin/../lib/gcc/arm-none-linux-gnueabi/4.3.2/include -pipe  -DCONFIG_ARM -D__ARM__ -marm  -mabi=aapcs-linux -mno-thumb-interwork -march=armv5te -Wall -Wstrict-prototypes -fno-stack-protector   \
+		-o board.o board.c -c
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libarm.a board.o bootm.o cache.o cache-cp15.o interrupts.o reset.o
+r - board.o
+r - bootm.o
+r - cache.o
+r - cache-cp15.o
+r - interrupts.o
+r - reset.o
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/lib'
+make -C fs/cramfs/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/cramfs'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libcramfs.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/cramfs'
+make -C fs/fat/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/fat'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libfat.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/fat'
+make -C fs/fdos/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/fdos'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libfdos.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/fdos'
+make -C fs/jffs2/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/jffs2'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libjffs2.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/jffs2'
+make -C fs/reiserfs/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/reiserfs'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libreiserfs.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/reiserfs'
+make -C fs/ext2/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/ext2'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libext2fs.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/ext2'
+make -C fs/yaffs2/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/yaffs2'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libyaffs2.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/yaffs2'
+make -C fs/ubifs/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/ubifs'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libubifs.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/fs/ubifs'
+make -C net/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/net'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/net'
+make -C disk/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/disk'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/disk'
+make -C drivers/bios_emulator/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/bios_emulator'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libatibiosemu.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/bios_emulator'
+make -C drivers/block/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/block'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libblock.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/block'
+make -C drivers/dma/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/dma'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libdma.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/dma'
+make -C drivers/fpga/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/fpga'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libfpga.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/fpga'
+make -C drivers/gpio/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/gpio'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libgpio.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/gpio'
+make -C drivers/hwmon/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/hwmon'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libhwmon.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/hwmon'
+make -C drivers/i2c/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/i2c'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libi2c.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/i2c'
+make -C drivers/input/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/input'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libinput.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/input'
+make -C drivers/misc/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/misc'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libmisc.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/misc'
+make -C drivers/mmc/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mmc'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libmmc.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mmc'
+make -C drivers/mtd/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mtd'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libmtd.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mtd'
+make -C drivers/mtd/nand/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mtd/nand'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mtd/nand'
+make -C drivers/mtd/onenand/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mtd/onenand'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libonenand.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mtd/onenand'
+make -C drivers/mtd/ubi/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mtd/ubi'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libubi.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mtd/ubi'
+make -C drivers/mtd/spi/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mtd/spi'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libspi_flash.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/mtd/spi'
+make -C drivers/net/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/net'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/net'
+make -C drivers/net/phy/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/net/phy'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libphy.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/net/phy'
+make -C drivers/pci/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/pci'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libpci.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/pci'
+make -C drivers/pcmcia/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/pcmcia'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/pcmcia'
+make -C drivers/power/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/power'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libpower.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/power'
+make -C drivers/spi/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/spi'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libspi.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/spi'
+make -C drivers/rtc/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/rtc'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/rtc'
+make -C drivers/serial/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/serial'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/serial'
+make -C drivers/twserial/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/twserial'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libtws.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/twserial'
+make -C drivers/usb/gadget/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/usb/gadget'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libusb_gadget.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/usb/gadget'
+make -C drivers/usb/host/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/usb/host'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libusb_host.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/usb/host'
+make -C drivers/usb/musb/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/usb/musb'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libusb_musb.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/usb/musb'
+make -C drivers/usb/phy/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/usb/phy'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libusb_phy.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/usb/phy'
+make -C drivers/video/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/video'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libvideo.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/video'
+make -C drivers/watchdog/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/watchdog'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libwatchdog.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/drivers/watchdog'
+make -C common/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/common'
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/common'
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/common'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-gcc  -g  -Os   -fno-common -ffixed-r8 -msoft-float  -D__KERNEL__ -DTEXT_BASE=0x20680000 -I/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/include -fno-builtin -ffreestanding -nostdinc -isystem /usr/local/arm/arm-2008q3-linux/bin/../lib/gcc/arm-none-linux-gnueabi/4.3.2/include -pipe  -DCONFIG_ARM -D__ARM__ -marm  -mabi=aapcs-linux -mno-thumb-interwork -march=armv5te -Wall -Wstrict-prototypes -fno-stack-protector   \
+		-o cmd_mem.o cmd_mem.c -c
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libcommon.a cmd_bdinfo.o cmd_boot.o cmd_bootm.o cmd_console.o cmd_help.o cmd_load.o cmd_mem.o cmd_misc.o cmd_nand.o cmd_net.o cmd_nvedit.o cmd_pcmcia.o cmd_source.o cmd_version.o command.o console.o dlmalloc.o env_common.o env_nand.o exports.o flash.o image.o main.o memsize.o s_record.o stdio.o xyzModem.o
+r - cmd_bdinfo.o
+r - cmd_boot.o
+r - cmd_bootm.o
+r - cmd_console.o
+r - cmd_help.o
+r - cmd_load.o
+r - cmd_mem.o
+r - cmd_misc.o
+r - cmd_nand.o
+r - cmd_net.o
+r - cmd_nvedit.o
+r - cmd_pcmcia.o
+r - cmd_source.o
+r - cmd_version.o
+r - command.o
+r - console.o
+r - dlmalloc.o
+r - env_common.o
+r - env_nand.o
+r - exports.o
+r - flash.o
+r - image.o
+r - main.o
+r - memsize.o
+r - s_record.o
+r - stdio.o
+r - xyzModem.o
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/common'
+make -C lib/libfdt/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/lib/libfdt'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libfdt.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/lib/libfdt'
+make -C api/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/api'
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ar crv libapi.a 
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/api'
+make -C post/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/post'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/post'
+make -C board/alpscale/asm9260-evk/
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/board/alpscale/asm9260-evk'
+make[1]: “libasm9260-evk.a”是最新的。
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/board/alpscale/asm9260-evk'
+make -C /home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs/ u-boot.lds
+make[1]: Entering directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs'
+make[1]: Nothing to be done for `u-boot.lds'.
+make[1]: Leaving directory `/home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/cpu/arm926ejs'
+UNDEF_SYM=`/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-objdump -x board/alpscale/asm9260-evk/libasm9260-evk.a lib/libgeneric.a lib/lzma/liblzma.a lib/lzo/liblzo.a arch/arm/cpu/arm926ejs/libarm926ejs.a arch/arm/cpu/arm926ejs/asm9260/libasm9260.a arch/arm/lib/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a fs/yaffs2/libyaffs2.a fs/ubifs/libubifs.a net/libnet.a disk/libdisk.a drivers/bios_emulator/libatibiosemu.a drivers/block/libblock.a drivers/dma/libdma.a drivers/fpga/libfpga.a drivers/gpio/libgpio.a drivers/hwmon/libhwmon.a drivers/i2c/libi2c.a drivers/input/libinput.a drivers/misc/libmisc.a drivers/mmc/libmmc.a drivers/mtd/libmtd.a drivers/mtd/nand/libnand.a drivers/mtd/onenand/libonenand.a drivers/mtd/ubi/libubi.a drivers/mtd/spi/libspi_flash.a drivers/net/libnet.a drivers/net/phy/libphy.a drivers/pci/libpci.a drivers/pcmcia/libpcmcia.a drivers/power/libpower.a drivers/spi/libspi.a drivers/rtc/librtc.a drivers/serial/libserial.a drivers/twserial/libtws.a drivers/usb/gadget/libusb_gadget.a drivers/usb/host/libusb_host.a drivers/usb/musb/libusb_musb.a drivers/usb/phy/libusb_phy.a drivers/video/libvideo.a drivers/watchdog/libwatchdog.a common/libcommon.a lib/libfdt/libfdt.a api/libapi.a post/libpost.a | sed  -n -e 's/.*\(__u_boot_cmd_.*\)/-u\1/p'|sort|uniq`; cd /home/chard/u-boot/u-boot-2010.06/u-boot-2010.06 && /usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-ld -Bstatic -T u-boot.lds  -Ttext 0x20680000 $UNDEF_SYM arch/arm/cpu/arm926ejs/start.o --start-group lib/libgeneric.a lib/lzma/liblzma.a lib/lzo/liblzo.a arch/arm/cpu/arm926ejs/libarm926ejs.a arch/arm/cpu/arm926ejs/asm9260/libasm9260.a arch/arm/lib/libarm.a fs/cramfs/libcramfs.a fs/fat/libfat.a fs/fdos/libfdos.a fs/jffs2/libjffs2.a fs/reiserfs/libreiserfs.a fs/ext2/libext2fs.a fs/yaffs2/libyaffs2.a fs/ubifs/libubifs.a net/libnet.a disk/libdisk.a drivers/bios_emulator/libatibiosemu.a drivers/block/libblock.a drivers/dma/libdma.a drivers/fpga/libfpga.a drivers/gpio/libgpio.a drivers/hwmon/libhwmon.a drivers/i2c/libi2c.a drivers/input/libinput.a drivers/misc/libmisc.a drivers/mmc/libmmc.a drivers/mtd/libmtd.a drivers/mtd/nand/libnand.a drivers/mtd/onenand/libonenand.a drivers/mtd/ubi/libubi.a drivers/mtd/spi/libspi_flash.a drivers/net/libnet.a drivers/net/phy/libphy.a drivers/pci/libpci.a drivers/pcmcia/libpcmcia.a drivers/power/libpower.a drivers/spi/libspi.a drivers/rtc/librtc.a drivers/serial/libserial.a drivers/twserial/libtws.a drivers/usb/gadget/libusb_gadget.a drivers/usb/host/libusb_host.a drivers/usb/musb/libusb_musb.a drivers/usb/phy/libusb_phy.a drivers/video/libvideo.a drivers/watchdog/libwatchdog.a common/libcommon.a lib/libfdt/libfdt.a api/libapi.a post/libpost.a board/alpscale/asm9260-evk/libasm9260-evk.a --end-group /home/chard/u-boot/u-boot-2010.06/u-boot-2010.06/arch/arm/lib/eabi_compat.o -L /usr/local/arm/arm-2008q3-linux/bin/../lib/gcc/arm-none-linux-gnueabi/4.3.2 -lgcc -Map u-boot.map -o u-boot
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-objcopy -O srec u-boot u-boot.srec
+/usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-objcopy --gap-fill=0xff -O binary u-boot u-boot.bin
