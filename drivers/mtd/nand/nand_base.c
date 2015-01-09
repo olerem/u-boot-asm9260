@@ -902,6 +902,7 @@ static int nand_read_page_raw(struct mtd_info *mtd, struct nand_chip *chip,
 {
 	chip->read_buf(mtd, buf, mtd->writesize);
 	chip->read_buf(mtd, chip->oob_poi, mtd->oobsize);
+
 	return 0;
 }
 
@@ -2646,7 +2647,7 @@ static struct nand_flash_dev *nand_get_flash_type(struct mtd_info *mtd,
 
 	/* Lookup the flash id */
 	for (i = 0; nand_flash_ids[i].name != NULL; i++) {
-		if (dev_id == nand_flash_ids[i].id) {
+		if ((*maf_id == nand_flash_ids[i].maf_id) && (dev_id == nand_flash_ids[i].id)) {
 			type =  &nand_flash_ids[i];
 			break;
 		}
@@ -2685,7 +2686,7 @@ static struct nand_flash_dev *nand_get_flash_type(struct mtd_info *mtd,
 		 */
 		mtd->erasesize = type->erasesize;
 		mtd->writesize = type->pagesize;
-		mtd->oobsize = mtd->writesize / 32;
+		mtd->oobsize = type->oobsize;
 		busw = type->options & NAND_BUSWIDTH_16;
 	}
 
