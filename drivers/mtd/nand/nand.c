@@ -51,25 +51,22 @@ static void nand_init_chip(struct mtd_info *mtd, struct nand_chip *nand,
 
 	nand->IO_ADDR_R = nand->IO_ADDR_W = (void  __iomem *)base_addr;
 	if (board_nand_init(nand) == 0) {
-		if (nand_scan(mtd, maxchips) == 0) {
-			if (!mtd->name)
-				mtd->name = (char *)default_nand_name;
+		if (!mtd->name)
+			mtd->name = (char *)default_nand_name;
 #ifndef CONFIG_RELOC_FIXUP_WORKS
-			else
-				mtd->name += gd->reloc_off;
+		else
+			mtd->name += gd->reloc_off;
 #endif
 
 #ifdef CONFIG_MTD_DEVICE
-			/*
-			 * Add MTD device so that we can reference it later
-			 * via the mtdcore infrastructure (e.g. ubi).
-			 */
-			sprintf(dev_name[i], "nand%d", i);
-			mtd->name = dev_name[i++];
-			add_mtd_device(mtd);
+		/*
+		 * Add MTD device so that we can reference it later
+		 * via the mtdcore infrastructure (e.g. ubi).
+		 */
+		sprintf(dev_name[i], "nand%d", i);
+		mtd->name = dev_name[i++];
+		add_mtd_device(mtd);
 #endif
-		} else
-			mtd->name = NULL;
 	} else {
 		mtd->name = NULL;
 		mtd->size = 0;
