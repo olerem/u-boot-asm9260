@@ -50,8 +50,8 @@ extern void nand_wait_ready(struct mtd_info *mtd);
  * is supported now. If you add a chip with bigger oobsize/page
  * adjust this accordingly.
  */
-#define NAND_MAX_OOBSIZE	218
-#define NAND_MAX_PAGESIZE	4096
+#define NAND_MAX_OOBSIZE	448
+#define NAND_MAX_PAGESIZE	8192
 
 /*
  * Constants for hardware specific CLE/ALE/NCE function
@@ -442,21 +442,25 @@ struct nand_chip {
 /**
  * struct nand_flash_dev - NAND Flash Device ID Structure
  * @name:	Identify the device type
- * @id:		device ID code
+ * @maf_id:	manufacturer ID code of device
+ * @id:	device ID code
  * @pagesize:	Pagesize in bytes. Either 256 or 512 or 0
  *		If the pagesize is 0, then the real pagesize
  *		and the eraseize are determined from the
  *		extended id bytes in the chip
- * @erasesize:	Size of an erase block in the flash device.
  * @chipsize:	Total chipsize in Mega Bytes
+ * @erasesize:	Size of an erase block in the flash device.
+ * @oobsize:	Size of Out of Band in the flash device.
  * @options:	Bitfield to store chip relevant options
  */
 struct nand_flash_dev {
 	char *name;
+	int maf_id;
 	int id;
 	unsigned long pagesize;
 	unsigned long chipsize;
 	unsigned long erasesize;
+	unsigned long oobsize;
 	unsigned long options;
 };
 
