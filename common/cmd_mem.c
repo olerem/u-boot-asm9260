@@ -349,8 +349,8 @@ int do_mem_cmp (cmd_tbl_t *cmdtp, int flag, int argc, char *argv[])
 		addr2 += size;
 	}
 
-	printf("Total of %ld %s%s were the same\n",
-		ngood, size == 4 ? "word" : size == 2 ? "halfword" : "byte",
+	printf("Total of %ld(0x%lx) %s%s were the same\n",
+		ngood, ngood, size == 4 ? "word" : size == 2 ? "halfword" : "byte",
 		ngood == 1 ? "" : "s");
 	return rcode;
 }
