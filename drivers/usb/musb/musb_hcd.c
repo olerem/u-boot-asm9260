@@ -1071,7 +1071,8 @@ int usb_lowlevel_init(void)
 {
 	u8  power;
 	u32 timeout;
-
+	u32 i;
+	
 	musb_rh_init();
 
 	if (musb_platform_init() == -1)
@@ -1081,6 +1082,7 @@ int usb_lowlevel_init(void)
 	musbr = musb_cfg.regs;
 	musb_configure_ep(&epinfo[0],
 			sizeof(epinfo) / sizeof(struct musb_epinfo));
+
 	musb_start();
 
 	/*
@@ -1088,9 +1090,10 @@ int usb_lowlevel_init(void)
 	 * should be a usb device connected.
 	 */
 	timeout = musb_cfg.timeout;
-	while (timeout--)
+	while (--timeout)
 		if (readb(&musbr->devctl) & MUSB_DEVCTL_HM)
 			break;
+
 
 	/* if musb core is not in host mode, then return */
 	if (!timeout)
@@ -1113,6 +1116,7 @@ int usb_lowlevel_init(void)
 			MUSB_TYPE_SPEED_HIGH :
 			((readb(&musbr->devctl) & MUSB_DEVCTL_FSDEV) ?
 			MUSB_TYPE_SPEED_FULL : MUSB_TYPE_SPEED_LOW);
+
 	return 0;
 }
 
