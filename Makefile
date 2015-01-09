@@ -154,6 +154,8 @@ sinclude $(obj)include/autoconf.mk
 include $(obj)include/config.mk
 export	ARCH CPU BOARD VENDOR SOC
 
+CROSS_COMPILE = /usr/local/arm/arm-2008q3-linux/bin/arm-none-linux-gnueabi-
+
 # set default to nothing for native builds
 ifeq ($(HOSTARCH),$(ARCH))
 CROSS_COMPILE ?=
@@ -2713,6 +2715,8 @@ mp2usb_config	:	unconfig
 #########################################################################
 ## ARM926EJ-S Systems
 #########################################################################
+asm9260_config	:	unconfig
+	@$(MKCONFIG) $(@:_config=) arm arm926ejs asm9260-evk alpscale asm9260
 
 afeb9260_config:	unconfig
 	@$(MKCONFIG) $(@:_config=) arm arm926ejs afeb9260 NULL at91
